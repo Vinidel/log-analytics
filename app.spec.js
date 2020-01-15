@@ -16,10 +16,10 @@ describe('App', () => {
   beforeAll(async () => {
     addToIpAddressesStub = jest.fn();
     addToUrlsStub = jest.fn();
-    getTopIpsStub = jest.fn();
-    getTopUrlStub = jest.fn();
+    getTopIpsStub = jest.fn().mockReturnValue([]);
+    getTopUrlStub = jest.fn().mockReturnValue([]);
     getUniqueStub = jest.fn();
-    
+
     stub = () => {
       return {
         addToUrls: addToUrlsStub,
