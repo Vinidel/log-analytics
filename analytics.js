@@ -13,7 +13,7 @@ function analytics() {
      let r = 0;
      if (a.frequency < b.frequency) {
       r = 1;
-     } else {
+     } else if (a.frequency > b.frequency) {
        r = -1;
      }
      return r;
