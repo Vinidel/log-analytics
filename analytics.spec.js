@@ -29,7 +29,6 @@ describe('Analytics', () => {
      '/intranet-analytics/',
      '/another-analytics/',
      '/just-analytics/',
-     '/intranet-analytics/',
      '/google-analytics/',
      '/google-analytics/',
      '/another-analytics/',
@@ -50,6 +49,7 @@ describe('Analytics', () => {
 
     it('should get top 3 urls', () => {
       const top3 = analyse.getTop3Urls();
+      console.log(top3);
       expect(top3.length).toEqual(3);
       expect(top3[0].frequency).toEqual(5);
     });

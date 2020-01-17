@@ -9,7 +9,15 @@ function analytics() {
     const sorted = arrayToSearch.sort();
     const result = countFrequency(sorted, 1);
     const top3 = [];
-    result.sort((a, b) => (a.frequency < b.frequency)).map((el,i) => {
+    result.sort((a, b) => {
+     let r = 0;
+     if (a.frequency < b.frequency) {
+      r = 1;
+     } else {
+       r = -1;
+     }
+     return r;
+    }).map((el,i) => {
       if (i <= TOP_3) {
         top3.push(el)
       }
